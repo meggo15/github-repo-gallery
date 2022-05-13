@@ -47,8 +47,8 @@ const displayRepos = function (repos) {
 
 repoList.addEventListener ("click", function(e){
     if (e.target.matches("h3")) {
-        const repoName = repoList.innerText.value;
-        specificRepoInfo (repoName);
+        const repoName = e.target.innerText;
+        //specificRepoInfo (repoName);
     }
 });
 
@@ -70,11 +70,11 @@ const displaySpecificRepoInfo = function (repoInfo, languages) {
     repoData.innerHTML = "";
     const div2 = document.createElement ("div");
     div2.innerHTML = `
-    <h3>Name: ${languages.name}</h3>
-        <p>Description: ${languages.description}</p>
-        <p>Default Branch: ${languages.default_branch}</p>
+    <h3>Name: ${repoInfo.name}</h3>
+        <p>Description: ${repoInfo.description}</p>
+        <p>Default Branch: ${repoInfo.default_branch}</p>
         <p>Languages: ${languages.join(", ")}</p>
-        <a class="visit" href="${languages.homepage}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>`
+        <a class="visit" href="${repoInfo.homepage}" target="_blank" rel="noreferrer noopener">View Repo on GitHub!</a>`
  div2.append (repoData);
  repoData.classList.remove ("hide");
  repoInfo.classList.add ("hide");

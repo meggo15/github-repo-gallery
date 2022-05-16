@@ -51,7 +51,7 @@ const displayRepos = function (repos) {
 repoList.addEventListener ("click", function(e){
     if (e.target.matches("h3")) {
         const repoName = e.target.innerText;
-        //specificRepoInfo (repoName);
+        specificRepoInfo (repoName);
     }
 });
 
